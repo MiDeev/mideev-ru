@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+@font-face {
+    font-family: "BebasLight";
+    src: url("../fonts/BebasLight.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Conda";
+    src: url("../fonts/Conda.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+nav {
+    background-color: #141415;
+    color: white;
+    font-family: 'Roboto';
+    font-size: 20px;
+    width: 100%;
+    background: #121213;
+    height: 80px;
+    position: fixed;
+    z-index: 1;
+}
+
+#menu {
+    float: left;
+    right: 80px;
+    position: fixed;
+}
+
+li {
+    padding-left: 40px;
+    display: inline-block;
+    font-weight: 300;
+    line-height: 20px;
+    position: relative;
+    transition: all 0.3s ease-out;
+}
+
+.menu-icon {
+    animation: showing 0.2s steps(60) 0.1s 1 normal both;
+}
+
+#log {
+    font-family: 'Montserrat';
+    letter-spacing: 1px;
+    float: left;
+    margin-left: 80px;
+    line-height: 80px;
+    user-select: text;
+}
+
+#menu>li>a {
+    padding: 30px 0px 30px 0px;
+    color: #aaa;
+    transition: 0.5s color;
+    text-decoration: none;
+}
+
+
+
+a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+}
+
+.co2 {
+    top: 50%;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 0px;
+    color: #ababac;
+    font-size: 15px;
+    user-select: text;
+    font-family: 'Roboto';
+}
+
+.pc {
+    margin-top: 80px;
+    width: 100%;
+    position: fixed;
+    height: 3px;
+    background: rgb(41, 41, 41);
+}
+
+.pb {
+    height: 100%;
+    background: #f44;
+    width: 0%;
+}
+
+#menu>li>a:hover {
+    color: #fff;
+    transition: 0.5s all;
+}
+
+@keyframes showing {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+li>a:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    border-bottom: 2px solid #f44;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    left: 50%;
+    bottom: 25px;
+}
+
+li>a:hover:before {
+    width: 100%;
+    left: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    background-color: #b6b6b6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+.welcom {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.welcome {
+    top: 45%;
+    color: #ddd;
+    font-family: 'Montserrat';
+    font-size: 50px;
+    letter-spacing: 0px;
+    transition: letter-spacing 2s;
+    animation: showing 0.8s steps(100) 0.4s 1 normal both;
+    position: fixed;
+}
+
+.wilka {
+
+    color: #ddd;
+    font-family: 'Montserrat';
+    font-weight: 100;
+    font-size: 25px;
+    letter-spacing: 0px;
+    transition: letter-spacing 2s;
+    animation: showing 0.8s steps(100) 0.4s 1 normal both;
+    margin-top: 5px;
+
+
+}
+
+
+
+.welcome:hover {
+    transition: letter-spacing 2s;
+    letter-spacing: 20px;
+}
+
+
+
+.welcome:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    border-bottom: 2px solid #f45;
+    transition: width 1.4s, left 1.4s;
+    left: 50%;
+    top: 48px;
+}
+
+.welcome:hover:before {
+    width: 100%;
+    left: 0;
+}
+
+.sit {
+    top: 44%;
+    margin-top: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.sites {
+    top: 45%;
+
+    transform: translateY(-50%);
+    margin-top: 75px;
+    position: fixed;
+}
+
+.sites>a {
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    transition: filter .2s;
+    filter: invert(50%);
+}
+
+.sites>a:hover {
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    cursor: pointer;
+    filter: invert(0%);
+    transition: filter .2s;
+}
+
+
+
+@media (max-width: 768px) {
+    .welcome:hover {
+        letter-spacing: 0px;
+    }
+}
+
+@media (max-width: 500px) {
+    * {
+        zoom: 0.95;
+    }
+}
