@@ -78,3 +78,9 @@ nav {
         margin-top: 1000px;
     }
 }
+
+.sites {
+    display: flex;
+    justify-content: center;
+
+}

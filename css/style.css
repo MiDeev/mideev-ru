@@ -1,26 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-
-@font-face {
-    font-family: "BebasLight";
-    src: url("../fonts/BebasLight.otf");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Conda";
-    src: url("../fonts/Conda.ttf");
-    font-weight: normal;
-    font-style: normal;
-}
 
 nav {
     background-color: #141415;
     color: white;
     font-family: 'Roboto';
     font-size: 20px;
+    font-weight: 300;
     width: 100%;
     background: #121213;
     height: 80px;
@@ -48,22 +35,21 @@ li {
 }
 
 #log {
-    font-family: 'Montserrat';
+    font-family: 'Open Sans';
     letter-spacing: 1px;
     float: left;
+    font-weight: 400;
     margin-left: 80px;
     line-height: 80px;
     user-select: text;
 }
 
-#menu>li>a {
+#menu > li > a {
     padding: 30px 0px 30px 0px;
     color: #aaa;
     transition: 0.5s color;
     text-decoration: none;
 }
-
-
 
 a {
     display: inline-block;
@@ -79,9 +65,10 @@ a {
     position: absolute;
     bottom: 0px;
     color: #ababac;
-    font-size: 15px;
+    font-size: 16px;
     user-select: text;
-    font-family: 'Roboto';
+    font-weight: 500;
+    font-family: 'Open Sans';
 }
 
 .pc {
@@ -98,7 +85,7 @@ a {
     width: 0%;
 }
 
-#menu>li>a:hover {
+#menu > li > a:hover {
     color: #fff;
     transition: 0.5s all;
 }
@@ -113,7 +100,7 @@ a {
     }
 }
 
-li>a:before {
+li > a:before {
     position: absolute;
     content: "";
     width: 0;
@@ -123,7 +110,7 @@ li>a:before {
     bottom: 25px;
 }
 
-li>a:hover:before {
+li > a:hover:before {
     width: 100%;
     left: 0;
 }
@@ -145,17 +132,16 @@ li>a:hover:before {
     width: 5px;
 }
 
-.welcom {
+.main {
     display: flex;
     justify-content: center;
-    margin-top: 0px;
     text-align: center;
 }
 
 .welcome {
-    top: 45%;
+    top: -100px;
     color: #ddd;
-    font-family: 'Montserrat';
+    font-family: 'Rubik';
     font-size: 50px;
     letter-spacing: 0px;
     transition: letter-spacing 2s;
@@ -163,42 +149,37 @@ li>a:hover:before {
     position: fixed;
 }
 
-.wilka {
-
+.bord {
     color: #ddd;
-    font-family: 'Montserrat';
+    font-family: 'Open Sans';
     font-weight: 100;
     font-size: 25px;
     letter-spacing: 0px;
     transition: letter-spacing 2s;
     animation: showing 0.8s steps(100) 0.4s 1 normal both;
-    margin-top: 5px;
-
-
 }
-
 
 
 .welcome:hover {
     transition: letter-spacing 2s;
     letter-spacing: 20px;
+    text-align: center;
 }
-
 
 
 .welcome:before {
     position: absolute;
     content: "";
     width: 0;
-    border-bottom: 2px solid #f45;
+    border-bottom: 3px solid #f45;
     transition: width 1.4s, left 1.4s;
     left: 50%;
-    top: 48px;
+    top: 50px;
 }
 
 .welcome:hover:before {
-    width: 100%;
-    left: 0;
+    width: 98%;
+    left: 0px;
 }
 
 .sit {
@@ -217,7 +198,7 @@ li>a:hover:before {
     position: fixed;
 }
 
-.sites>a {
+.sites > a {
     margin-top: 20px;
     width: 40px;
     height: 40px;
@@ -226,7 +207,11 @@ li>a:hover:before {
     filter: invert(50%);
 }
 
-.sites>a:hover {
+#news, #about, #contacts {
+    cursor: not-allowed;
+}
+
+.sites > a:hover {
     margin-top: 20px;
     width: 40px;
     height: 40px;
@@ -235,7 +220,6 @@ li>a:hover:before {
     filter: invert(0%);
     transition: filter .2s;
 }
-
 
 
 @media (max-width: 768px) {
@@ -248,4 +232,64 @@ li>a:hover:before {
     * {
         zoom: 0.95;
     }
+}
+
+.sites {
+    margin-top: 100px;
+}
+
+
+.links > div {
+    width: 400px;
+    height: 50px;
+    border-radius: 20px;
+    margin-top: 10px;
+    background-color: #242425;
+    transition: letter-spacing 0.5s, background-color 0.5s;
+    animation: showing 1.0s steps(100) 0.4s 1 normal both;
+}
+
+.links > div > object {
+
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 20px;
+    float: left;
+    filter: invert(90%);
+}
+
+
+.links > div > a{
+    color: #ddd;
+    font-family: 'Open Sans';
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 14px;
+    margin-right: 52px;
+    display: flex;
+    justify-content: center;
+    padding-top: 14px;
+}
+
+.dc > object {
+    height: 25px !important;
+    margin-top: 11px !important;
+    margin-left: 19px !important;
+}
+
+.tg > object {
+    height: 35px !important;
+    margin-top: 7px !important;
+    margin-left: 17px !important;
+}
+
+.links > div:hover {
+    transition: letter-spacing 0.5s, background-color 0.5s;
+    letter-spacing: 2px;
+    width: 400px;
+    height: 50px;
+    border-radius: 20px;
+    margin-top: 10px;
+    background-color: #3a3a3a;
+    cursor: pointer;
 }
