@@ -244,7 +244,7 @@ li > a:hover:before {
     height: 50px;
     border-radius: 20px;
     margin-top: 10px;
-    background-color: #242425;
+    background-color: #252628;
     transition: letter-spacing 0.5s, background-color 0.5s;
     animation: showing 1.0s steps(100) 0.4s 1 normal both;
 }
@@ -290,6 +290,6 @@ li > a:hover:before {
     height: 50px;
     border-radius: 20px;
     margin-top: 10px;
-    background-color: #3a3a3a;
+    background-color: #2b2c30;
     cursor: pointer;
 }
