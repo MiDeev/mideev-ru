@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Rubik&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 * {
     padding: 0;
@@ -239,7 +239,7 @@ li>a:hover:before {
 .welcome {
     top: -100px;
     color: #ddd;
-    font-family: 'Campione Neue Sans';
+    font-family: 'Bebas Neue';
     font-size: 50px;
     letter-spacing: 0px;
     transition: letter-spacing 2s;
@@ -249,7 +249,7 @@ li>a:hover:before {
 
 .lined {
     font-size: 50px;
-    font-family: 'Campione Neue Sans', monospace;
+    font-family: 'Bebas Neue', monospace;
     color: #f0f0f0;
     overflow: hidden;
     position: fixed;
