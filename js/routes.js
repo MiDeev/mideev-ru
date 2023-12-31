@@ -15,6 +15,14 @@ const routes = [
         }
     },
     {
+        slug: '#old_mobile_ui',
+        file: '/dc/old_mobile.html',
+        title: 'old_mobile_ui',
+        afterLoad() {
+            window.location.href = "/dc/old_mobile.html"
+        }
+    },
+    {
         slug: '#invisible_typing',
         file: '/dc/inv.html',
         title: 'invisible_typing',
