@@ -15,9 +15,9 @@ const routes = [
         }
     },
     {
-        slug: '#invisivble_typing',
+        slug: '#invisible_typing',
         file: '/dc/inv.html',
-        title: 'invisivble_typing',
+        title: 'invisible_typing',
         afterLoad() {
             window.location.href = "/dc/inv.html"
         }
