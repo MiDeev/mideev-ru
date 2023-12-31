@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/androidstudio.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <style>
+        .hljs {
+            filter: contrast(1.5);
+            background: transparent;
+        }
+
+        body {
+            background-color: #141415;
+            display: flex;
+            justify-content: center;
+            padding-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <pre><code class="language-javascript">
+let wpRequire;
+
+window.webpackChunkdiscord_app.push([[ Math.random() ], {}, (req) => { wpRequire = req; }]);
+
+let UserSettingsActions = Object.values(wpRequire.c).find(x => x?.exports?.PreloadedUserSettingsActionCreators).exports;
+let ProtobufTypes = Object.values(wpRequire.c).find(x => x?.exports?.BoolValue).exports;
+
+UserSettingsActions.PreloadedUserSettingsActionCreators.updateAsync("appearance", data => {
+    data.mobileRedesignDisabled = ProtobufTypes.BoolValue.create({value: true})
+}, UserSettingsActions.UserSettingsDelay.INFREQUENT_USER_ACTION)
+    </code></pre>
+    <script>
+        history.pushState({}, "old", "/#old_mobile_ui")
+        hljs.highlightAll()
+    </script>
+</body>
+</html>
