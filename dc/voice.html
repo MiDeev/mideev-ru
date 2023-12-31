@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/androidstudio.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <style>
+        .hljs {
+            filter: contrast(1.5);
+            background: transparent;
+        }
+
+        body {
+            background-color: #141415;
+            display: flex;
+            justify-content: center;
+            padding-top: 200px;
+        }
+        pre {
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <pre><code class="language-javascript">
+        let _mods = webpackChunkdiscord_app.push([[Symbol()],{},({c})=>Object.values(c)]);
+        webpackChunkdiscord_app.pop();
+        
+        window.findByProps = (...props) => {
+            for (let m of _mods) {
+                try {
+                    if (!m.exports || m.exports === window) continue;
+                    if (props.every((x) => m.exports?.[x])) return m.exports;
+        
+                    for (let ex in m.exports) {
+                        if (props.every((x) => m.exports?.[ex]?.[x])) return m.exports[ex];
+                    }
+                } catch {}
+            }
+        }
+        
+        function openFile() {
+            return new Promise((r) => {
+                let t = document.createElement('input');
+                (t.type = 'file'),
+                    (t.accept = 'audio/*'),
+                    (t.style.display = 'none'),
+                    document.body.appendChild(t),
+                    t.click(),
+                    t.addEventListener('change', () => {
+                        r(t.files[0]), t.remove();
+                    });
+            });
+        }
+        function getAudioDuration(r) {
+            return new Promise((t, o) => {
+                let n = new (window.AudioContext || window.webkitAudioContext)(),
+                    a = new FileReader();
+                (a.onload = (r) => {
+                    let a = r.target.result;
+                    n.decodeAudioData(
+                        a,
+                        (r) => {
+                            let o = r.duration;
+                            t(o);
+                        },
+                        o,
+                    );
+                }),
+                    (a.onerror = (r) => {
+                        o(r.error);
+                    }),
+                    a.readAsArrayBuffer(r);
+            });
+        }
+        function uploadFile(r, t) {
+            return new Promise((o) => {
+                let n = new FileReader();
+                (n.onload = function (t) {
+                    let n = t.target.result;
+                    fetch(r, {
+                        method: 'PUT',
+                        body: n,
+                        referrer: 'https://discord.com/',
+                        referrerPolicy: 'strict-origin-when-cross-origin',
+                        method: 'PUT',
+                        mode: 'cors',
+                        credentials: 'omit',
+                    })
+                        .then((r) => o(r.ok))
+                        .catch((r) => o(!1));
+                }),
+                    n.readAsArrayBuffer(t);
+            });
+        }
+        async function start(r = 'AAAAAAAAAAAA') {
+            if (!window.findByProps)
+                return console.error(
+                    '%c[Error] %cUncaught ReferenceError: findByProps is not defined',
+                    'color: red',
+                    '',
+                );
+            let t = findByProps(
+                    'getCurrentlySelectedChannelId',
+                ).getCurrentlySelectedChannelId(),
+                o = await openFile(),
+                n = await findByProps('getAPIBaseURL')
+                    .post({
+                        url: `/channels/${t}/attachments`,
+                        body: {
+                            files: [
+                                {
+                                    filename: 'voice-message.ogg',
+                                    file_size: o.size,
+                                    id: `${Math.floor(1e3 * Math.random())}`,
+                                    is_clip: !1,
+                                },
+                            ],
+                        },
+                    })
+                    .catch((r) => r);
+            if (!n.ok) return console.error(`%c[Error] %c${e.text}`, 'color: red', '');
+            n = JSON.parse(n.text);
+            let a = n.attachments[0],
+                i = await uploadFile(a.upload_url, o);
+            if (!i) return console.error('%c[Error] %cUpload failed', 'color: red', '');
+            let l = (await getAudioDuration(o)) || 1,
+                c = await findByProps('getAPIBaseURL')
+                    .post({
+                        url: `/channels/${t}/messages`,
+                        body: {
+                            flags: 8192,
+                            attachments: [
+                                {
+                                    id: '0',
+                                    filename: 'voice-message.ogg',
+                                    uploaded_filename: a.upload_filename,
+                                    waveform: r,
+                                    duration_secs: Math.floor(l),
+                                },
+                            ],
+                        },
+                    })
+                    .catch((r) => r);
+            if (!c.ok) return console.error(`%c[Error] %c${e.text}`, 'color: red', '');
+            console.log('%c[Elysia] %cSuccess', 'color: pink', '');
+        }
+        start();
+    </code>
+    <code class="language-javascript">
+        let _mods = webpackChunkdiscord_app.push([[Symbol()],{},({c})=>Object.values(c)]);
+        webpackChunkdiscord_app.pop();
+        
+        const findByProps = (...props) => {
+            for (let m of _mods) {
+                try {
+                    if (!m.exports || m.exports === window) continue;
+                    if (props.every((x) => m.exports?.[x])) return m.exports;
+        
+                    for (let ex in m.exports) {
+                        if (props.every((x) => m.exports?.[ex]?.[x])) return m.exports[ex];
+                    }
+                } catch {}
+            }
+        }
+    </code>
+</pre>
+    <script>
+        history.pushState({}, "hernya", "/#voice_messages")
+        hljs.highlightAll()
+    </script>
+</body>
+
+</html>

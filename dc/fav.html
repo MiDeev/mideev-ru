@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/androidstudio.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <style>
+        .hljs {
+            filter: contrast(1.5);
+            background: transparent;
+        }
+
+        body {
+            background-color: #141415;
+            display: flex;
+            justify-content: center;
+            padding-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <pre><code class="language-javascript">
+        {let c; webpackChunkdiscord_app.push([[Symbol()],{},r=>c=r.c]); webpackChunkdiscord_app.pop();
+        let u = Object.values(c).find(x=>x?.exports?.default?.getUsers).exports.default;
+        let m = Object.values(u._dispatcher._actionHandlers._dependencyGraph.nodes);
+        
+        u.getCurrentUser().flags |= 1;
+        m.find((x)=>x.name === "DeveloperExperimentStore").actionHandler["CONNECTION_OPEN"]();
+        try {m.find((x)=>x.name === "ExperimentStore").actionHandler["OVERLAY_INITIALIZE"]({user:{flags: 1}})} catch {};
+        m.find((x)=>x.name === "ExperimentStore").storeDidChange();}
+
+        await findByProps('_dispatch').dispatch({type: 'EXPERIMENT_OVERRIDE_BUCKET', experimentId: '2021-09_favorites_server', experimentBucket: 1})    
+    </code></pre>
+    <script>
+        history.pushState({}, "hera", "/#favorites_activation")
+        hljs.highlightAll()
+    </script>
+</body>
+</html>
