@@ -24,7 +24,7 @@
 
 <body>
     <pre><code class="language-javascript">
-        let _mods; webpackChunkdiscord_app.push([[Symbol()], {}, r => _mods = r.c]);
+        let _mods; webpackChunkdiscord_app.push([[Symbol()],{},r=>_mods=r.c]);
         webpackChunkdiscord_app.pop();
         
         let findByProps = (...props) => {
@@ -36,13 +36,12 @@
                     for (let ex in m.exports) {
                         if (props.every((x) => m.exports?.[ex]?.[x])) return m.exports[ex];
                     }
-                } catch { }
+                } catch {}
             }
         }
         
-        function createInvite() {
-            findByProps('createFriendInvite').createFriendInvite().then(result => { console.log('%cCreated a new friend invite',
-            'color: green; font-size: larger', result) })
+        function createInvite(){
+        findByProps('createFriendInvite').createFriendInvite().then(result => {console.log('%cСсылка', 'color: yellow; font-size: larger', `https://discord.gg/${result.code}`)})
         }
         
         createInvite()
