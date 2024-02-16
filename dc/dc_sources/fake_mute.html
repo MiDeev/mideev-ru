@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favorites</title>
+    <title>Fake mute</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/androidstudio.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <style>
@@ -24,19 +24,22 @@
 
 <body>
     <pre><code class="language-javascript">
-let wpRequire;
+        var text = new TextDecoder("utf-8");
 
-window.webpackChunkdiscord_app.push([[ Math.random() ], {}, (req) => { wpRequire = req; }]);
-
-let UserSettingsActions = Object.values(wpRequire.c).find(x => x?.exports?.PreloadedUserSettingsActionCreators).exports;
-let ProtobufTypes = Object.values(wpRequire.c).find(x => x?.exports?.BoolValue).exports;
-
-UserSettingsActions.PreloadedUserSettingsActionCreators.updateAsync("appearance", data => {
-    data.mobileRedesignDisabled = ProtobufTypes.BoolValue.create({value: true})
-}, UserSettingsActions.UserSettingsDelay.INFREQUENT_USER_ACTION)
+        WebSocket.prototype.original = WebSocket.prototype.send;
+        WebSocket.prototype.send = function(data) {
+            if (Object.prototype.toString.call(data) === "[object ArrayBuffer]") {
+                if (text.decode(data).includes("self_deaf")) {
+                    console.log("found mute/deafen");
+                    data = data.replace('"self_mute":false', 'NiceOneDiscord');
+                    console.log("by MiDeev");
+                }
+            }
+            WebSocket.prototype.original.apply(this, [data]);
+        }
     </code></pre>
     <script>
-        history.pushState({}, "old", "/#old_mobile_ui")
+        history.pushState({}, "mute", "/#fake_mute")
         hljs.highlightAll()
     </script>
 </body>

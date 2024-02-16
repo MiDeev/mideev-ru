@@ -8,42 +8,66 @@ const routes = [
     },
     {
         slug: '#friend_invite_link',
-        file: '/dc/finv.html',
+        file: '/dc/dc_sources/friend_invite.html',
         title: 'friend_invite_link',
         afterLoad() {
-            window.location.href = "/dc/finv.html"
+            window.location.href = "/dc/dc_sources/friend_invite.html"
         }
     },
     {
         slug: '#old_mobile_ui',
-        file: '/dc/old_mobile.html',
+        file: '/dc/dc_sources/old_mobile_ui.html',
         title: 'old_mobile_ui',
         afterLoad() {
-            window.location.href = "/dc/old_mobile.html"
+            window.location.href = "/dc/dc_sources/old_mobile_ui.html"
         }
     },
     {
         slug: '#invisible_typing',
-        file: '/dc/inv.html',
+        file: '/dc/dc_sources/invisible_typing.html',
         title: 'invisible_typing',
         afterLoad() {
-            window.location.href = "/dc/inv.html"
+            window.location.href = "/dc/dc_sources/invisible_typing.html"
         }
     },
     {
         slug: '#voice_messages',
-        file: '/dc/voice.html',
+        file: '/dc/dc_sources/voice.html',
         title: 'voice_messages',
         afterLoad() {
-            window.location.href = "/dc/voice.html"
+            window.location.href = "/dc/dc_sources/voice.html"
         }
     },
     {
         slug: '#favorites_activation',
-        file: '/dc/fav.html',
+        file: '/dc/dc_sources/favorites.html',
         title: 'favorites_activation',
         afterLoad() {
-            window.location.href = "/dc/fav.html"
+            window.location.href = "/dc/dc_sources/favorites.html"
+        }
+    },
+    {
+        slug: '#fake_mute',
+        file: '/dc/dc_sources/fake_mute.html',
+        title: 'fake_mute',
+        afterLoad() {
+            window.location.href = "/dc/dc_sources/fake_mute.html"
+        }
+    },
+    {
+        slug: '#ghost_pings',
+        file: '/dc/dc_sources/ghost_pings.html',
+        title: 'ghost_pings',
+        afterLoad() {
+            window.location.href = "/dc/dc_sources/ghost_pings.html"
+        }
+    },
+    {
+        slug: '#embed_messages',
+        file: '/dc/dc_sources/embed_messages.html',
+        title: 'embed_messages',
+        afterLoad() {
+            window.location.href = "/dc/dc_sources/embed_messages.html"
         }
     },
 ]
